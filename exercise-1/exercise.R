@@ -7,21 +7,35 @@ install.packages('devtools')
 devtools::install_github("hadley/fueleconomy")
 
 # Require/library the fueleconomy package
+library(fueleconomy)
 
 
 # You should have have access to the `vehicles` data.frame
+View(vehicles)
 
 
 # Create a data.frame of vehicles from 1997
+is.data.frame(vehicles)
+data.frame(vehicles)
+frame.v <- vehicles[vehicles$year == 1997,]
 
 
 # Use the `unique` function to verify that there is only 1 value in the `year` column of your new data.frame
+unique <- function(x) {
+  if (vehicles$year == 1997) {
+    return(true)
+  } else{
+    return(false)
+  }
+}
 
 
 # Create a data.frame of 2-Wheel Drive vehicles that get more than 20 miles/gallon in the city
+frame.two <- vehicles[vehicles$drive == "2-Wheel Drive" && vehicles$hwy > 20]
 
 
 # Of those vehicles, what is the vehicle ID of the vehicle with the worst hwy mpg?
+vehicle.id <- vehicles[vehicles$hwy < ]
 
 
 # Write a function that takes a `year` and a `make` as parameters, and returns 
@@ -29,5 +43,3 @@ devtools::install_github("hadley/fueleconomy")
 
 
 # What was the most efficient honda model of 1995?
-
-
